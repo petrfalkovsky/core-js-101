@@ -41,12 +41,9 @@ function findElement(arr, value) {
  *    2 => [ 1, 3 ]
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
-function generateOdds(/* len */) {
-  throw new Error('Not implemented');
-  //   let i = 0;
-  //   for (i; i < len * 2; i += 1) {
-  //     if (i % 2 === 1) return i;
-  //   }
+function generateOdds(len) {
+  const oddArr = Array.from({ length: len });
+  return oddArr.map((el, i) => 2 * i + 1);
 }
 
 // for (var i = 0; i < 10 * 2; i++) {
@@ -69,10 +66,18 @@ function generateOdds(/* len */) {
  *    [0, 1, 2, 3, 4, 5] => [0, 1, 2, 3, 4, 5,   0, 1, 2, 3, 4, 5]
  *    [] => []
  */
-function doubleArray(/* arr */) {
-  throw new Error('Not implemented');
+function doubleArray(arr) {
+  const newArr = arr.copyWithin(0, 0, -1);
+  return arr.concat(newArr);
 }
 
+// function doubleArray(/* arr */) {
+//   let arr = ['Ace', 10, true];
+//   let newArr = arr.copyWithin(0, 0, -1);
+//     return arr.concat(newArr);
+// }
+
+// console.log(doubleArray());
 /**
  * Returns an array of positive numbers from the specified array in original order
  *
