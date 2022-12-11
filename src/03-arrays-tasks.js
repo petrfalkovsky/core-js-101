@@ -104,9 +104,20 @@ function getArrayOfPositives(arr) {
  *    [ 1, 2, 3, 4, 5 ] => []
  *    [ 'cat, 'dog', 'raccoon' ] => [ 'cat', 'dog', 'raccoon' ]
  */
-function getArrayOfStrings(/* arr */) {
-  throw new Error('Not implemented');
+
+function getArrayOfStrings(arr) {
+  return arr.filter((str) => typeof str === 'string');
 }
+//
+// function getArrayOfStrings(/* arr */) {
+// const arr = [0, 1, 'cat', 3, true, 'dog'];
+// if (arr.filter((str) => typeof str === 'string')) {
+// console.log('✅ String is contained in Array');
+// } else {
+// console.log('⛔️ String is NOT contained in Array');
+// }
+// }
+// getArrayOfStrings(/* arr */);
 
 /**
  * Removes falsy values from the specified array
