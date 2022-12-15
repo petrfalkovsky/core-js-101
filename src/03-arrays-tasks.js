@@ -132,9 +132,35 @@ function getArrayOfStrings(arr) {
  *    [ 1, 2, 3, 4, 5, 'false' ]         => [ 1, 2, 3, 4, 5, 'false' ]
  *    [ false, 0, NaN, '', undefined ]   => [ ]
  */
-function removeFalsyValues(/* arr */) {
-  throw new Error('Not implemented');
+
+function removeFalsyValues(arr) {
+  return arr.filter((el) => Boolean(el));
 }
+
+// function removeFalsyValues(/* arr */) {
+//   let arr = [
+//     0,
+//     false,
+//     'cat',
+//     NaN,
+//     true,
+//     '',
+//     1,
+//     2,
+//     3,
+//     4,
+//     5,
+//     'false',
+//     false,
+//     0,
+//     NaN,
+//     '',
+//     undefined,
+//   ];
+//   console.log(arr.filter(Number).filter((int) => typeof int === 'number'));
+//   console.log(arr.filter(Number.isInteger));
+// }
+// removeFalsyValues(/* arr */)
 
 /**
  * Returns the array of uppercase strings from the specified array
@@ -147,9 +173,16 @@ function removeFalsyValues(/* arr */) {
  *    => [ 'PERMANENT-INTERNSHIP', 'GLUTINOUS-SHRIEK', 'MULTIPLICATIVE-ELEVATION' ],
  *    [ 'a', 'b', 'c', 'd', 'e', 'f', 'g' ]  => [ 'A', 'B', 'C', 'D', 'E', 'F', 'G' ]
  */
-function getUpperCaseStrings(/* arr */) {
-  throw new Error('Not implemented');
+
+function getUpperCaseStrings(arr) {
+  return arr.toString().toUpperCase().split(',');
 }
+// function getUpperCaseStrings(/* arr */) {
+//   let arr = [ 'permanent-internship', 'glutinous-shriek', 'multiplicative-elevation'  ];
+//   return console.log(arr.toString().toUpperCase().split(','));
+//   // return console.log(arr.map((el, i) => i.toString().toUpperCase()));
+//   }
+//   getUpperCaseStrings()
 
 /**
  * Returns the array of string lengths from the specified string array.
