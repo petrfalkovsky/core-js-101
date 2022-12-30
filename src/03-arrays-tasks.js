@@ -252,10 +252,15 @@ function getHead(arr, n) {
  *    [ 1, 3, 4, 5 ], 2  => [ 4, 5 ]
  *    [ 'a', 'b', 'c', 'd'], 3  => [ 'b', 'c', 'd' ]
  */
-function getTail(/* arr, n */) {
-  throw new Error('Not implemented');
+function getTail(arr, n) {
+  return arr.slice(-n);
 }
+// function getTail(/* arr, n */) {
+//   const arr = [ 'a', 'b', 'c', 'd'];
+//   return arr.slice(-3,);
+// }
 
+// console.log(getTail())
 /**
  * Returns CSV representation of two-dimensional numeric array.
  * https://en.wikipedia.org/wiki/Comma-separated_values
@@ -276,10 +281,11 @@ function getTail(/* arr, n */) {
  *    +'20,21,22,23,24\n'
  *    +'30,31,32,33,34'
  */
-function toCsvText(/* arr */) {
-  throw new Error('Not implemented');
+function toCsvText(arr) {
+  return arr.map((el) => el.join(',')).join('\n');
 }
 
+// .map((el, i) => 2 * i + 1);
 /**
  * Transforms the numeric array into the according array of squares:
  *   f(x) = x * x
@@ -291,8 +297,8 @@ function toCsvText(/* arr */) {
  *   [ 0, 1, 2, 3, 4, 5 ] => [ 0, 1, 4, 9, 16, 25 ]
  *   [ 10, 100, -1 ]      => [ 100, 10000, 1 ]
  */
-function toArrayOfSquares(/* arr */) {
-  throw new Error('Not implemented');
+function toArrayOfSquares(arr) {
+  return arr.map((el) => el ** 2);
 }
 
 /**
@@ -309,9 +315,19 @@ function toArrayOfSquares(/* arr */) {
  *   [ 0, 0, 0, 0, 0]         => [ 0, 0, 0, 0, 0]
  *   [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ] => [ 1, 3, 6, 10, 15, 21, 28, 36, 45, 55 ]
  */
-function getMovingSum(/* arr */) {
-  throw new Error('Not implemented');
+function getMovingSum(arr) {
+  const from = Array.from(arr);
+  return from.map((el, i) => arr.slice(0, i + 1).reduce((acc, curr) => acc + curr, 0));
 }
+// function getMovingSum(/* arr */) {
+//   const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+//   const sum = Array.from(arr);
+//   return sum.map((el, i) =>
+//     arr.slice(0, i + 1).reduce((accum, current) => accum + current, 0)
+//   );
+// }
+
+// console.log(getMovingSum());
 
 /**
  * Returns every second item from the specified array:
@@ -324,10 +340,19 @@ function getMovingSum(/* arr */) {
  * [ 'a', 'b', 'c' , null ]  => [ "b", null ]
  * [ "a" ] => []
  */
-function getSecondItems(/* arr */) {
-  throw new Error('Not implemented');
+function getSecondItems(arr) {
+  return arr.filter((el, i) => i % 2 === 1);
 }
-
+// function getSecondItems(arr, nth) {
+//   arr.filter((e, i) => i % nth === nth - 1);
+//   return (arr, 2);
+// }
+// function getSecondItems(/* arr */) {
+//   const arr = [ 'a', 'b', 'c' , null ];
+//   const every_nth = (arr, nth) => arr.filter((e, i) => i % nth === nth - 1);
+//   return every_nth(arr, 2);
+// }
+// console.log(getSecondItems());
 /**
  * Propagates every item in sequence its position times
  * Returns an array that consists of: one first item, two second items, three third items etc.
